@@ -1,0 +1,202 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #1e1e1e;
+    background-image: url('../assets/background.jpg'); /* Prilagojena pot do assets */
+    background-size: cover;
+    background-attachment: fixed;
+    color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.main-container {
+    background-color: rgba(10, 10, 10, 0.75);
+    padding: 25px;
+    border-radius: 12px;
+    border: 3px solid #d48a0f; /* Oranžna obroba */
+    width: 90%;
+    max-width: 800px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    text-align: center;
+}
+
+.game-title {
+    font-family: 'Creepster', cursive;
+    font-size: 3.5em;
+    color: #e89f23; /* Oranžna */
+    text-shadow: 1px 1px 3px #000;
+    margin-bottom: 25px;
+}
+
+.error-display {
+    background-color: #c0392b;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* --- Nastavitveni zaslon --- */
+.setup-area h3 {
+    font-family: 'Creepster', cursive;
+    color: #d48a0f;
+    font-size: 1.5em;
+    margin-bottom: 8px;
+}
+.player-setup-inputs {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+.player-input-unit {
+    padding: 15px;
+    margin: 5px;
+    background-color: rgba(30,30,30,0.5);
+    border: 1px solid #b8730e;
+    border-radius: 8px;
+    flex-basis: 200px;
+    flex-grow: 1;
+}
+.setup-area label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.setup-area input[type="text"],
+.setup-area select {
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #d48a0f;
+    background-color: #444;
+    color: #fff;
+    box-sizing: border-box;
+}
+.game-config-options {
+    padding: 15px;
+    background-color: rgba(30,30,30,0.5);
+    border: 1px solid #b8730e;
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+.game-config-options label { display: inline-block; margin-right: 10px; }
+.game-config-options select { width: auto; min-width: 70px; margin-right: 20px; }
+
+/* --- Zaslon igre v teku --- */
+.game-in-progress-area .all-players-display {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+.single-player-info {
+    padding: 15px;
+    margin: 10px;
+    background-color: rgba(30,30,30,0.5);
+    border: 1px solid #b8730e;
+    border-radius: 8px;
+    flex-basis: 200px;
+    flex-grow: 1;
+}
+.single-player-info h2 {
+    font-family: 'Creepster', cursive;
+    color: #d48a0f;
+    font-size: 1.8em;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+.dice-visuals {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #fff;
+}
+.dice-symbol { margin: 0 3px; }
+.single-player-info p { font-size: 1.1em; }
+
+.current-game-status {
+    padding: 15px;
+    background-color: rgba(30,30,30,0.5);
+    border: 1px solid #b8730e;
+    border-radius: 8px;
+}
+.current-game-status p { font-size: 1.3em; margin-bottom: 15px; }
+
+/* --- Zaslon rezultatov --- */
+.results-summary-area {
+    padding: 20px;
+}
+.results-list {
+    list-style-type: none; /* Odstranimo default pike */
+    padding-left: 0;
+    text-align: left;
+    max-width: 400px;
+    margin: 0 auto 25px auto;
+}
+.results-list li {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    background-color: rgba(255,255,255,0.07);
+    border-radius: 4px;
+    border-left: 4px solid #e89f23;
+}
+.results-list .place {
+    font-weight: bold;
+    color: #e89f23;
+    margin-right: 10px;
+}
+.results-list strong {
+    /* Ni več potrebno, če je ime igralca del glavnega besedila */
+}
+
+/* --- Gumbi --- */
+.action-button {
+    font-family: 'Creepster', cursive;
+    background-color: #e89f23;
+    color: #2c1e04;
+    border: none;
+    padding: 10px 25px;
+    font-size: 1.5em;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+}
+.action-button:hover {
+    background-color: #ffc107;
+    transform: scale(1.05);
+}
+.play-again-link {
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* --- Slika na dnu --- */
+.dice-image-footer {
+    width: 100%;
+    text-align: center;
+    margin-top: auto;
+    padding-top: 20px;
+}
+.dice-image-footer img {
+    max-width: 300px;
+    width: 60%;
+    height: auto;
+    opacity: 0.7;
+}
+
+/* Prilagoditve za manjše zaslone */
+@media (max-width: 600px) {
+    .game-title { font-size: 2.5em; }
+    .player-setup-inputs, .all-players-display { flex-direction: column; align-items: center; }
+    .player-input-unit, .single-player-info { width: 90%; max-width: 300px; flex-basis: auto; }
+    .game-config-options select { display: block; width: 80%; margin: 5px auto 10px auto; }
+    .action-button { font-size: 1.3em; padding: 8px 20px; }
+    .dice-image-footer img { max-width: 200px; }
+}
